@@ -1,0 +1,90 @@
+Aim:
+  To develop a costomized ping command to test the server connectivity
+
+Algorithm:
+1. Start
+2. Initialize host, port, count, and an empty list times.
+3. Repeat count tumes.
+ ---> Create a socket
+ ---> Record start time.
+ ---> Try to connect to chest port.
+ ---> Record end time.
+ ---> Close the socket
+ ---> Compute RTT - (end-Start) * 1000ms and store it in times
+ ---> If connection fails --> print " Request times out"
+4. After loop, if times is not empty:
+  --> calculate min RTT, max RTT, average RTT 
+5. print the results. 
+6. End
+
+******************************************************************************
+
+import socket
+import time
+
+host = "google.com"   # you can change this
+port = 80             # HTTP port
+count = 4             # number of pings
+
+for i in range(count):
+    try:
+        s = socket.socket()
+        start = time.time()
+        s.connect((host, port))
+        end = time.time()
+        s.close()
+        print(f"Reply from {host}: time={(end-start)*1000:.2f} ms")
+    except Exception:
+        print("Request timed out")
+
+Customized Ping Program to Measure Min, Max, and Average RTT
+
+import socket, time
+
+host = "google.com"
+port = 80
+count = 4
+times = []
+
+for i in range(count):
+    try:
+        s = socket.socket()
+        start = time.time()
+        s.connect((host, port))
+        end = time.time()
+        s.close()
+        rtt = (end - start) * 1000
+        times.append(rtt)
+        print(f"Reply from {host}: time={rtt:.2f} ms")
+    except:
+        print("Request timed out")
+
+if times:
+    print("\nMin RTT =", min(times), "ms")
+    print("Max RTT =", max(times), "ms")
+    print("Avg RTT =", sum(times)/len(times), "ms")
+
+
+**********************************************************************************
+Sample Output
+
+Basic ping:
+      Reply grom google.com: time = 0.83ms
+      Reply grom google.com: time = 0.03ms
+      Reply grom google.com: time = 1.38ms
+
+customized ping command
+
+      Reply grom google.com: time = 3.11ms
+      Reply grom google.com: time = 0.99ms
+      Reply grom google.com: time = 1.35ms
+
+min RTT : 0.11ms
+max RTT : 3.11ms
+avg RTT : 1.09ms
+
+
+
+Result:
+
+    Thus the developed a costomized pind program using python socket programming to test server connectivity and measure round-trip time (RTT).
