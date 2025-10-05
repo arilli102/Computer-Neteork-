@@ -1,0 +1,79 @@
+Aim:
+  To develop a client server application that perform basic arithmetic opration (addition, subtraction,multiplication and division) using XML-RPL protocol, demostration remote procedure calls overall network.
+
+Algorithm:
+
+  1. Start the server on a specific ip or port
+  2.Define function (add, Sub, Mul, Div)
+  3. Register all function with the server using their names.
+  4. Start listening for incoming client requests.
+  5. ASV the user to enter (add, Sub, Mul, Div).
+  6. Choose an operation (add, Sub, Mul, Div)
+  7. receive the result form the server.
+
+
+Program:
+
+Clientpy
+import xmlrpc.client
+proxy= xmlrpc.client.ServerProxy('http://1ocalhost:8000r) 
+for i in range(S)
+  a=int(input("Enter a number:"))   
+  b=int(input("Enter b number"))
+  print("addition of given number is o/od "o/o((proxy.add(a,b)))) 
+  print("sub of given number is o/od "o/o((proxy.sub(a,b)))) 
+  print("mul of given number is o/od "o/o((proxy.mul(a,b)))) 
+  print("div of given number is o/od "o/o((proxy.div(a,b)))) 
+  print("mod of given number is o/od "o/o((proxy.mod(a,b))))
+
+
+
+Server.py
+from xmlrpc.server import SimpleXMLRPCServer 
+def add(a,b}:
+  return a+b
+def sub(a,b) 
+  return a-b 
+def mul(a,b) 
+  return a'b
+def div(a,b)
+  return alb 
+def mod(a,b}:
+  return a%b
+
+server =SimpleXMLRPCServer(("localhost", 8000)) 
+print("Listening on port 8000...") 
+server.register_function(add, "add") 
+server.register_function(sub, "sub"} 
+server.register_function(mul, "mul") 
+server.register_function(div, "div") 
+server.register_function(mod, "mod") 
+server.serve_forever()
+
+
+Sample Output:
+Server Side Output:
+Listening on port 8000...
+
+Client Side Output:
+Enter a number: 10
+Enter another number: 5
+Addition of given numbers is: 15
+Subtraction of given numbers is: 5
+Multiplication of given numbers is: 50
+Division of given numbers is: 2.0
+Modulus of given numbers is: 0
+
+Enter a number: 8
+Enter another number: 3
+Addition of given numbers is: 11
+Subtraction of given numbers is: 5
+Multiplication of given numbers is: 24
+Division of given numbers is: 2.6666666666666665
+Modulus of given numbers is: 2
+
+
+
+Result:
+
+      Thus, the communication between an XML-RPC client and server was successfully implemented and demonstrated using Python.
