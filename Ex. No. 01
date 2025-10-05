@@ -1,0 +1,47 @@
+Aim:
+   TO Excute Linux Commands
+
+Commands:
+1. ls          --> Lists the contents of the current director.
+2. ls -l       --> for a detailed list.
+3. ls-a        --> to show hidden files.
+4. pwd         --> print the current working directory.
+5. cd          --> change the current directory.
+6. cd..        --> To go up one level.
+7. cd (or) cd~ --> to go to your home directory.
+8. mkdir       --> creates a new directory.
+9. rmdir       --> Removes an empty directory.
+
+File oeration:
+
+1. touch          --> create an empy file or updates the timestamp of an existing file.
+2. cp             --> copies files or directores.
+3. mv             --> Moves or removes files or directories
+4. rm             --> Delets files.
+5. rm -r          --> To delete the content of a file.
+6. cat            --> Displays the content of a file.
+7. less           --> Displays file content inn a paged format, allowing scrolling.
+8. head           --> Displays the first few lines of a files.
+9. tail           --> Display the last few lines of a file.
+
+System information & utilities.
+
+1. man           --> Display the manual page for given command.
+2.clear          --> Clearn the terminal screen.
+3. whoami        --> Display the current username.
+4. uname -a      --> Display details system information.
+5. df -h         --> display dick space usage in a ahuman readable format.
+6. grep          --> Searches for a pattern whithin a file.
+
+Permissions:
+
+1. chmod[permission] [filename]  --> change file permissions.
+2. chown [user:group] [filename] --> changes the owner and group of a file.
+
+Privilege Escalation: 
+1. Sudo --> Executes a command with superser.
+2. ping --> send packets to other server. It stands for packets internet group.
+
+
+Result:
+  Thus, network linux command executed successfully.
