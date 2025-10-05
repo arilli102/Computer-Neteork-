@@ -1,0 +1,61 @@
+Aim:
+   To study the concepts of socket programming in python using tcp.
+
+Algoritham:
+  1. Python core networking library is scoket module.
+  2. Python scoket module has both class-base and instances-based methods.
+  3. Class based method is an intutive approach which doesn't need an instance of a socket project.
+  4. In instance based method, if some data need to send server application
+  5. Intvitive to create a scoket object to perform that explicit operation.
+  6. This module has everything you need to build socket server and clients.
+
+Program:
+
+Server.py
+
+import socket
+
+# create socket and bind
+server = socket.socket()
+server.bind(('localhost', 9999))
+server.listen(1)
+print("Server waiting for connection...")
+
+# accept client connection
+conn, addr = server.accept()
+print("Connected with", addr)
+
+# receive message from client
+data = conn.recv(1024).decode()
+print("Client says:", data)
+
+# send reply to client
+conn.send(b"Hello Client, message received!")
+
+# close connection
+conn.close()
+
+===========================================================================
+
+client.py
+
+import socket
+
+# create socket and connect to server
+client = socket.socket()
+client.connect(('localhost', 9999))
+
+# send message to server
+client.send(b"Hello Server!")
+
+# receive reply
+reply = client.recv(1024).decode()
+print("Server says:", reply)
+
+# close connection
+client.close()
+
+
+
+Result:
+  Thus, The socket programming in tcp using python excuted successfully.
